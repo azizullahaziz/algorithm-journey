@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Structure Practice - Linked List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .list-container { margin-top: 20px; }
+        .node {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            position: relative;
+        }
+        .arrow {
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+        .list-container {
+            background-color: #f1f1f1;
+
+        }
+        .list-tail {
+            background-color: #606060;
+            padding: 5px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Singly Linked List Visualization</h1>
+    <div class="list-container" id="linked-list-visual"></div>
+
+    <script src="linked-list.js"></script>
+    <script>
+        // call LinkedList class to create a linked list and visualize it.
+        const list = new LinkedList(0);
+        list.insertAtTail(10);
+        list.insertAtTail(20);
+        list.insertAtTail(30);
+
+        list.visualize('linked-list-visual','Initial list');
+        //insert at head
+        list.insertAtHead(5);
+        list.visualize('linked-list-visual','After inserting 5 at head');
+        //insert at tail
+        list.insertAtTail(40);
+        list.visualize('linked-list-visual','After inserting 40 at tail');
+        //insert at index 4
+        list.insertAt(25, 4);
+        list.visualize('linked-list-visual','After inserting 25 at index 4');
+        list.insertAt(35, 6);
+        list.visualize('linked-list-visual','After inserting 35 at index 6');
+        // example of inserting at an index that is out of bounds. and error handling example.
+        try {
+            list.insertAt(350, 60);
+            list.visualize('linked-list-visual','After inserting 350 at index 60');
+        } catch (e) {
+            list.showError(e.message);
+        }
+
+        // delete/remove node at specific index
+        try {
+            list.removeAt(5);
+            list.visualize('linked-list-visual','After removing at index 5');
+        } catch (e){
+            list.showError(e.message);
+        }
+        try {
+            list.removeAt(6);
+            list.visualize('linked-list-visual','After removing at index 6');
+        } catch (e){
+            list.showError(e.message);
+        }
+        // modify node data at specific index
+        try {
+            list.modifyAt(15, 3);
+            list.visualize('linked-list-visual','After modifying 20 to 15 at index 3');
+        } catch (e){
+            list.showError(e.message);
+        }
+        // modify node data at specific index
+        try {
+            list.modifyAt(100, 0);
+            list.visualize('linked-list-visual','After modifying 5 to 100 at head');
+        } catch (e){
+            list.showError(e.message);
+        }
+        // reverse the linked list
+        list.reverse();
+        list.visualize('linked-list-visual','After reversing the linked list');
+    </script>
+</body>
+</html>
