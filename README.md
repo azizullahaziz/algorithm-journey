@@ -24,3 +24,6 @@ Welcome to my Data Structures and Algorithms daily practice repository. I solve 
 | 2025-06-30 | Valid PAlindrome (php)  | ✅ |
 | 2025-06-28 | 3Sum (js)               | ✅ |
 | 2025-06-28 | 3Sum (php)              | ✅ |
+
+## Solved problems snapshots
+[Palindrome Number (JS & PHP)](./leetcode)
