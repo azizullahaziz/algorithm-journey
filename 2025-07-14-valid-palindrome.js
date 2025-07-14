@@ -29,19 +29,44 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    //1. normalize the string to lower case and filter out non-alphanumeric characters.
-    const normalizedStr = s.toLowerCase().replace(/[^a-z0-9]/g, '');
-    //2. initialize two pointers.
-    let left = 0, right = normalizedStr.length - 1;
-    //3. iterate the string from both sides
-    while(left < right){
-        if(normalizedStr[left] !== normalizedStr[right]) return false;
+    //1. initialize two pointers.
+    let left = 0; right = s.length - 1;
+    //2. iterate throught the string
+    while(left < right) {
+        // skip space and non-alphanumeric characters
+        while(left < right && !/[a-zA-Z0-9]/.test(s[left])) left++;
+
+        while(left < right && !/[a-zA-Z0-9]/.test(s[right])) right--;
+
+        // compare characters in lower case
+        if(s[left].toLowerCase() !== s[right].toLowerCase()) return false;
+
         left++;
         right--;
-        
     }
 
     return true;
 
 }
 
+// another solution 
+// var isPalindrome(s) {
+//         //1. initialize two pointers
+//     let left = 0 , right = s.length -1;
+//     while (left < right){
+//         //2. skip non-numeric & non-alphabet characters.
+//         while(left < right && !/[a-zA-Z0-9]/.test(s[left])){
+//             left++
+//         }
+//         while(left < right && !/[a-zA-Z0-9]/.test(s[right])){
+//             right--
+//         }
+//         //3. compare the characters and return false if not the same.
+//         if(s[left].toLowerCase() !== s[right].toLowerCase()){
+//             return false
+//         }
+//         left++
+//         right--
+//     }
+//     return true;
+// }
