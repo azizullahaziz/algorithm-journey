@@ -1,6 +1,10 @@
 /*
- * Valid Palindrome Problem:
- * -------------------------
+ * LeetCode Problem: 3SUM
+ * Difficulty: Easy
+ * Solved: 28 June 2025
+ * Language: JavaScript
+ * Link: https://leetcode.com/problems/valid-palindrome/description/
+* Descripton:
  * Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
  * A palindrome reads the same forward and backward after removing non-alphanumeric characters and normalizing case.
  *
@@ -34,7 +38,10 @@ var isPalindrome = function(s) {
         if(normalizedStr[left] !== normalizedStr[right]) return false;
         left++;
         right--;
-        return true;
+        
     }
 
+    return true;
+
 }
+
