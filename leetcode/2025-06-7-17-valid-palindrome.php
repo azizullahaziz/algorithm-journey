@@ -57,4 +57,14 @@ class Solution {
         // if all characters matched, rerturn true.
         return true;
     }
+
+    // Solution, if we rely on built-in php functions
+    public function isPalindrome_($s) {
+        //Remove non-alphanumeric characters and convert to lower case.
+        $filteredStr = preg_replace('/[^a-zA-Z0-9]/', '', strtolower($s));
+        // Check if the filtered string is equal to its reverse.
+        return $filteredStr === strrev($filteredStr);
+    }
 }
+
+
