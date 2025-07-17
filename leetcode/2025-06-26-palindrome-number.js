@@ -1,6 +1,10 @@
 /**
  * LeetCode Problem: Palindrome Number
  * Difficulty: Easy
+ * Solved: 26 June 2025
+ * Language: JavaScript
+ * Link: https://leetcode.com/problems/palindrome-number/description/
+ * Description: 
  * 
  * Given an integer x, return true if x is a palindrome, and false otherwise.
  * 
@@ -13,6 +17,14 @@
  * @param {number} x
  * @return {boolean}
  */
+/**
+ * ✅ Approach:
+ * 1. Return false for negative numbers.
+ * 2. return false for numbers that end with 0 unless the number is 0.
+ * 3. return true for single digit numbers.
+ * 2. Convert number to string.
+ * 3. Use two pointers to check for palindrome.
+ */
 var isPalindrome = function(x) {
     //handle edge cases.
 
@@ -24,7 +36,7 @@ var isPalindrome = function(x) {
     if(x % 10 === 0 && x !== 0) return false;
     //3. if x is one digit number, return true.
     if(x >= 0 && x < 10) return true;
-    
+
 
     //2. convert number to string.
     const str = x.toString()

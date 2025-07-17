@@ -21,7 +21,7 @@ Welcome to my Data Structures and Algorithms daily practice repository. I solve 
 | 2025-06-26 | Palindrome Number (js)  | ✅ |
 | 2025-06-30 | Palindrome Number (php) | ✅ |
 | 2025-06-26 | Valid PAlindrome (js)   | ✅ |
-| 2025-06-30 | Valid PAlindrome (php)  | ✅ |
+| 2025-07-17 | Valid PAlindrome (php)  | ✅ |
 | 2025-06-28 | 3Sum (js)               | ✅ |
 | 2025-06-28 | 3Sum (php)              | ✅ |
 
