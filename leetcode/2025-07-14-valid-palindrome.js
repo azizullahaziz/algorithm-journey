@@ -47,26 +47,26 @@ var isPalindrome = function(s) {
 
     return true;
 
-}
+};
 
 // another solution 
-// var isPalindrome(s) {
-//         //1. initialize two pointers
-//     let left = 0 , right = s.length -1;
-//     while (left < right){
-//         //2. skip non-numeric & non-alphabet characters.
-//         while(left < right && !/[a-zA-Z0-9]/.test(s[left])){
-//             left++
-//         }
-//         while(left < right && !/[a-zA-Z0-9]/.test(s[right])){
-//             right--
-//         }
-//         //3. compare the characters and return false if not the same.
-//         if(s[left].toLowerCase() !== s[right].toLowerCase()){
-//             return false
-//         }
-//         left++
-//         right--
-//     }
-//     return true;
-// }
+var isPalindrome2 = function(s) {
+        //1. initialize two pointers
+    let left = 0 , right = s.length -1;
+    while (left < right){
+        //2. skip non-numeric & non-alphabet characters.
+        while(left < right && !/[a-zA-Z0-9]/.test(s[left])){
+            left++
+        }
+        while(left < right && !/[a-zA-Z0-9]/.test(s[right])){
+            right--
+        }
+        //3. compare the characters and return false if not the same.
+        if(s[left].toLowerCase() !== s[right].toLowerCase()){
+            return false
+        }
+        left++
+        right--
+    }
+    return true;
+}
