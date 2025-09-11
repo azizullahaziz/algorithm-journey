@@ -11,4 +11,5 @@
 | 2025-08-30 | Remove nth Node from end                 | PHP        | ✅     |
 | 2025-09-08 | Sort Colors                              | PHP        | ✅     |
 | 2025-09-08 | Sort Colors                              | PHP        | ✅     |
-
+| 2025-09-09 | Reverse Words in a String                | JavaScript | ✅     |
+| 2025-09-11 | Reverse Words in a String                | PHP        | ✅     |
