@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Generators Visualization</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Generators Visualization</h1>
+            <p class="subtitle">Understand how JavaScript generators work through an interactive visualization of the Fibonacci sequence generator.</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="explanation">
+                <h2>What are JavaScript Generators?</h2>
+                <p>Generators are special functions in JavaScript that can be paused and resumed, allowing you to produce a sequence of values over time.</p>
+                
+                <div class="code-block">
+                    <pre><code>// Generator function definition
+function* fibonacciGenerator() {
+    let a = 0, b = 1;
+    
+    while (true) {
+        yield a;
+        [a, b] = [b, a + b];
+    }
+}
+
+// Using the generator
+const fibGen = fibonacciGenerator();
+
+console.log(fibGen.next().value); // 0
+console.log(fibGen.next().value); // 1
+console.log(fibGen.next().value); // 1
+console.log(fibGen.next().value); // 2
+console.log(fibGen.next().value); // 3
+// ... and so on</code></pre>
+                </div>
+                
+                <h2>Key Concepts</h2>
+                <ul>
+                    <li><strong>function*</strong> - The syntax to define a generator function</li>
+                    <li><strong>yield</strong> - Pauses the generator and returns a value</li>
+                    <li><strong>.next()</strong> - Resumes the generator execution</li>
+                    <li>Generators maintain their state between pauses</li>
+                    <li>Perfect for infinite sequences like Fibonacci</li>
+                </ul>
+            </div>
+            
+            <div class="visualization">
+                <h2>Fibonacci Generator Visualization</h2>
+                
+                <div class="fib-visual" id="fibVisual">
+                    <div class="fib-number">0</div>
+                    <div class="fib-number">1</div>
+                    <div class="fib-number">1</div>
+                    <div class="fib-number">2</div>
+                    <div class="fib-number">3</div>
+                    <div class="fib-number">5</div>
+                    <div class="fib-number">8</div>
+                    <div class="fib-number">13</div>
+                    <div class="fib-number">21</div>
+                    <div class="fib-number">34</div>
+                </div>
+                
+                <div class="controls">
+                    <button id="nextBtn">Next Value</button>
+                    <button id="resetBtn">Reset Generator</button>
+                </div>
+                
+                <div class="generator-state">
+                    <strong>Current State:</strong> a = <span id="currentA">0</span>, b = <span id="currentB">1</span>
+                </div>
+                
+                <div class="value-log">
+                    <strong>Value Log:</strong>
+                    <div id="logEntries"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src = "generator.js"></script>
+</body>
+</html>
